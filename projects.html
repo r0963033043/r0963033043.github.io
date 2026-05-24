@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projects</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        min-height: 100vh;
+        background-color: #0a0a0f;
+        background-image:
+          radial-gradient(at 20% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+          radial-gradient(at 80% 80%, rgba(168, 85, 247, 0.12) 0px, transparent 50%);
+        color: #e4e4e7;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, #a78bfa, #60a5fa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        color: #71717a;
+        margin-bottom: 3rem;
+        font-size: 1rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        max-width: 720px;
+        width: 100%;
+      }
+
+      .card {
+        display: block;
+        padding: 2rem;
+        background: rgba(24, 24, 32, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        text-decoration: none;
+        color: inherit;
+        backdrop-filter: blur(10px);
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(167, 139, 250, 0.08), transparent);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(167, 139, 250, 0.4);
+        background: rgba(30, 30, 40, 0.8);
+      }
+
+      .card:hover::before { opacity: 1; }
+
+      .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+      .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #f4f4f5;
+      }
+
+      .card-desc {
+        font-size: 0.9rem;
+        color: #a1a1aa;
+        line-height: 1.5;
+      }
+
+      .card-arrow {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        color: #71717a;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      .card:hover .card-arrow {
+        transform: translate(4px, -4px);
+        color: #a78bfa;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Projects</h1>
+    <p class="subtitle">Select a project to explore</p>
+    <div class="grid" id="grid"></div>
+
+    <script>
+      const projects = [
+        { href: "/ootd/", icon: "\u{1F457}", title: "OOTD", desc: "Outfit of the day — daily looks and styling" },
+        { href: "/trip-planner/", icon: "✈", title: "Plan a Trip", desc: "Organize destinations and itineraries" }
+      ];
+
+      document.getElementById("grid").innerHTML = projects.map(p => `
+        <a class="card" href="${p.href}">
+          <div class="card-arrow">↗</div>
+          <div class="card-icon">${p.icon}</div>
+          <div class="card-title">${p.title}</div>
+          <div class="card-desc">${p.desc}</div>
+        </a>
+      `).join("");
+    </script>
+  </body>
+</html>
