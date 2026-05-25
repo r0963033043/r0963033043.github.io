@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>whoami</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/theme.js"></script>
+  <style>
+    body { padding: 3rem 1.5rem 4rem; }
+
+    .container { max-width: 760px; margin: 0 auto; }
+
+    .back-link { margin-bottom: 2rem; }
+
+    .card { padding: 2rem; margin-bottom: 1.5rem; }
+
+    .profile {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--bg);
+      flex-shrink: 0;
+    }
+
+    .profile-info { flex: 1; min-width: 240px; }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .headline {
+      color: var(--text-dim);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      color: var(--text-faint);
+      font-size: 0.9rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .meta span { display: inline-flex; align-items: center; gap: 0.35rem; }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .about p { color: var(--text-dim); margin-bottom: 0.85rem; }
+    .about p:last-child { margin-bottom: 0; }
+
+    .experience-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .experience-item:first-of-type { padding-top: 0; }
+    .experience-item:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+    .company-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: rgba(167, 139, 250, 0.12);
+      border: 1px solid rgba(167, 139, 250, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent-purple);
+      flex-shrink: 0;
+    }
+
+    .role-title { font-weight: 600; color: var(--text-strong); margin-bottom: 0.15rem; }
+    .role-company { color: var(--text-dim); font-size: 0.95rem; }
+    .role-dates { color: var(--text-faint); font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .role-desc { color: var(--text-muted); font-size: 0.9rem; }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill {
+      padding: 0.4rem 0.85rem;
+      background: var(--accent-tint);
+      border: 1px solid var(--accent-tint-border);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .honors li {
+      list-style: none;
+      padding: 0.6rem 0;
+      color: var(--text-dim);
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .honors li::before {
+      content: "★";
+      color: var(--accent-purple);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.6rem; }
+      .card { padding: 1.5rem; }
+      .avatar { width: 72px; height: 72px; font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☾</button>
+  <div class="container">
+    <a class="back-link" href="/projects.html">← Back to projects</a>
+
+    <section class="card">
+      <div class="profile">
+        <div class="avatar">RL</div>
+        <div class="profile-info">
+          <h1 class="gradient-text">Ruby Lai</h1>
+          <p class="headline">Cybersecurity · Blue Team · SOC · Frontend Developer</p>
+          <div class="meta">
+            <span>📍 Taiwan</span>
+            <span>🏢 CHT Security 中華資安國際</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card about">
+      <h2>About</h2>
+      <p>Frontend developer with experience building data-rich interfaces and the systems behind them.</p>
+      <p>Designed and developed frontends for a Security Operations Center (SOC) and BI dashboards. Manage the PostgreSQL and MSSQL databases that power them.</p>
+      <p>Comfortable across the stack — from writing automation scripts to working close to the hardware. That instinct goes back to student days, when a robotic arm project earned a programming award. More recently, recognized as an Outstanding Employee at work.</p>
+      <p>Driven by building new things — turning a blank slate into something that works, looks clean, and solves a real problem.</p>
+    </section>
+
+    <section class="card">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <div class="company-logo">C</div>
+        <div>
+          <div class="role-title">Senior Frontend Developer</div>
+          <div class="role-company">CHT Security 中華資安國際</div>
+          <div class="role-dates">May 2022 – Present</div>
+          <div class="role-desc">Building frontends for SOC monitoring tools and BI dashboards. Managing PostgreSQL and MSSQL databases that back the platform.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">Frontend Development</span>
+        <span class="skill">Cybersecurity</span>
+        <span class="skill">SOC Operations</span>
+        <span class="skill">Blue Team</span>
+        <span class="skill">PostgreSQL</span>
+        <span class="skill">MSSQL</span>
+        <span class="skill">BI Dashboards</span>
+        <span class="skill">Automation Scripting</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">HTML / CSS</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Honors & Awards</h2>
+      <ul class="honors">
+        <li>Outstanding Employee — CHT Security</li>
+        <li>Programming Award — robotic arm project (student)</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
