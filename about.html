@@ -70,17 +70,28 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
+    h3 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin: 1.25rem 0 0.6rem;
+    }
+    h3:first-of-type { margin-top: 0; }
+
     .about p { color: var(--text-dim); margin-bottom: 0.85rem; }
     .about p:last-child { margin-bottom: 0; }
 
     .experience-item {
       display: flex;
       gap: 1rem;
-      padding: 1rem 0;
+      padding: 1.25rem 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     .experience-item:first-of-type { padding-top: 0; }
     .experience-item:last-of-type { border-bottom: none; padding-bottom: 0; }
+    .experience-item > div:last-child { flex: 1; min-width: 0; }
 
     .company-logo {
       width: 48px;
@@ -100,6 +111,30 @@
     .role-company { color: var(--text-dim); font-size: 0.95rem; }
     .role-dates { color: var(--text-faint); font-size: 0.85rem; margin-bottom: 0.5rem; }
     .role-desc { color: var(--text-muted); font-size: 0.9rem; }
+
+    .bullets {
+      list-style: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .bullets li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.55;
+    }
+    .bullets li:last-child { margin-bottom: 0; }
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-purple);
+      opacity: 0.8;
+    }
 
     .skills {
       display: flex;
@@ -131,6 +166,13 @@
       flex-shrink: 0;
     }
 
+    .honors .award-meta {
+      display: block;
+      color: var(--text-faint);
+      font-size: 0.85rem;
+      margin-top: 0.15rem;
+    }
+
     @media (max-width: 480px) {
       h1 { font-size: 1.6rem; }
       .card { padding: 1.5rem; }
@@ -148,10 +190,11 @@
         <div class="avatar">RL</div>
         <div class="profile-info">
           <h1 class="gradient-text">Ruby Lai</h1>
-          <p class="headline">Cybersecurity · Blue Team · SOC · Frontend Developer</p>
+          <p class="headline">Senior Frontend Developer · SOC / MDR Platforms · Cybersecurity</p>
           <div class="meta">
             <span>📍 Taipei, Taiwan</span>
             <span>🏢 CHT Security 中華資安國際</span>
+            <span>🎓 B.Eng. Electrical Engineering, NUK</span>
           </div>
         </div>
       </div>
@@ -159,44 +202,189 @@
 
     <section class="card about">
       <h2>About</h2>
-      <p>Frontend developer with experience building data-rich interfaces and the systems behind them.</p>
-      <p>Designed and developed frontends for a Security Operations Center (SOC) and BI dashboards. Manage the PostgreSQL and MSSQL databases that power them.</p>
-      <p>Comfortable across the stack — from writing automation scripts to working close to the hardware. That instinct goes back to student days, when a robotic arm project earned a programming award. More recently, recognized as an Outstanding Employee at work.</p>
-      <p>Driven by building new things — turning a blank slate into something that works, looks clean, and solves a real problem.</p>
+      <p>Senior Frontend Developer in the Security Operations Center at CHT Security, building the platforms behind a managed security service: SOC/MDR reporting engines, a Security Risk Management platform, and the BI dashboards that sit on top of them.</p>
+      <p>Started in low-latency systems — C++ trading gateways, kernel-bypass networking and Linux performance tuning — before moving into security. That background shows up in how I build frontends: modular, measured, and resilient under load. Recent work cut a platform's error rate by 83% and delivered zero-downtime migrations for financial-institution clients.</p>
+      <p>Outside work, an active member of HITCON GIRLS and a regular volunteer at Taiwan's cybersecurity and open-source conferences. Student days were spent building an AI-driven robotic arm that won five competitions in a single year and exhibited at COMPUTEX.</p>
     </section>
 
     <section class="card">
       <h2>Experience</h2>
+
       <div class="experience-item">
         <div class="company-logo">C</div>
         <div>
           <div class="role-title">Senior Frontend Developer</div>
-          <div class="role-company">CHT Security 中華資安國際</div>
-          <div class="role-dates">May 2022 – Present</div>
-          <div class="role-desc">Building frontends for SOC monitoring tools and BI dashboards. Managing PostgreSQL and MSSQL databases that back the platform.</div>
+          <div class="role-company">CHT Security 中華資安國際 — Security Operations Center, Managed Security Service</div>
+          <div class="role-dates">May 2022 – Present · Taipei, Taiwan</div>
+          <ul class="bullets">
+            <li>Reduced the Security Risk Management platform's error rate by 83% by modularizing duplicated processing logic and upgrading the frontend framework.</li>
+            <li>Re-architected the SOC/MDR engine to decouple data-query and document-generation logic, enabling stable real-time reporting under high load.</li>
+            <li>Designed input-validation and task-execution logic for the SOC service module to improve backend data integrity.</li>
+            <li>Achieved zero-downtime migrations for financial-institution clients through a dynamic architecture, security patching and vulnerability remediation in core components.</li>
+            <li>Integrated EDR products and the ArcSight SIEM API, and designed risk indicators spanning technical telemetry, asset hygiene and user awareness to converge raw alert volume into genuine incidents.</li>
+            <li>Won 2nd Place for &ldquo;SOC-AI-1&rdquo; (AI-driven alert correlation and incident classification) and an Honorable Mention for &ldquo;SOC-AI-2&rdquo; (real-time AI assistant for the SOC platform) in the 2025 AI Innovation Application Competition.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="company-logo">H</div>
+        <div>
+          <div class="role-title">Software / System Engineer</div>
+          <div class="role-company">HyperShark</div>
+          <div class="role-dates">Dec 2020 – Aug 2021 · Taipei, Taiwan</div>
+          <ul class="bullets">
+            <li>Developed a C++ benchmarking suite for CPU, memory and SSD performance on overclocked servers, and tuned Linux for CPU performance.</li>
+            <li>Streamlined testing and system-tuning workflows with shell scripts, cutting benchmarking time by 80% and OS optimization time by 60%.</li>
+            <li>Implemented kernel-bypass techniques on low-latency network cards, benchmarked vendor latency and supported client deployments of low-latency environments.</li>
+            <li>Rebuilt a Docker-based KVM remote server control, developed an ATX power-signal module, and authored SOPs and test reports.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="company-logo">V</div>
+        <div>
+          <div class="role-title">C++ Software Engineer</div>
+          <div class="role-company">VICI Holdings</div>
+          <div class="role-dates">Aug 2020 – Dec 2020 · Taipei, Taiwan</div>
+          <ul class="bullets">
+            <li>Engineered C++ TCP/UDP gateway test frameworks for trading systems, covering quote distribution, FIX-protocol routing and execution reporting.</li>
+            <li>Diagnosed and optimized network performance with libpcap, tcpdump and Wireshark to validate quote and order data integrity.</li>
+            <li>Automated system monitoring with shell scripts and crontab, and streamlined FPGA testing workflows to cut processing time by 60%.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Education</h2>
+      <div class="experience-item">
+        <div class="company-logo">N</div>
+        <div>
+          <div class="role-title">Bachelor of Engineering in Electrical Engineering</div>
+          <div class="role-company">National University of Kaohsiung (NUK) · Computer Engineering focus</div>
+          <div class="role-dates">Sep 2015 – Jun 2019 · Kaohsiung, Taiwan · CGPA 3.75 / 4.0</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+      <div class="experience-item">
+        <div class="company-logo">🦾</div>
+        <div>
+          <div class="role-title">Intelligent Liquid Mixing System — Senior Group Project</div>
+          <div class="role-company">Department of Electrical Engineering, NUK</div>
+          <div class="role-dates">Nov 2017 – Dec 2018</div>
+          <ul class="bullets">
+            <li>Built an automated robotic arm for everyday-life applications with CNN-based recognition in C/C++ and OpenCV on Linux.</li>
+            <li>Contributed Arduino firmware and socket-based communication programs.</li>
+            <li>Designed a 3D-printable arm in SketchUp, then printed and assembled the physical prototype.</li>
+            <li>Secured research funding, attracted industry interest, and earned recognition at five competitions in 2018.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="experience-item">
+        <div class="company-logo">👾</div>
+        <div>
+          <div class="role-title">Galaxian-Style Arcade Game — Coursework Group Project</div>
+          <div class="role-company">Department of Electrical Engineering, NUK</div>
+          <div class="role-dates">Nov 2016 – Jan 2017</div>
+          <ul class="bullets">
+            <li>Built a 2D shooter in C with Allegro; owned the menu system and high-score sorting logic.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Community</h2>
+      <div class="experience-item">
+        <div class="company-logo">HG</div>
+        <div>
+          <div class="role-title">Member, HITCON GIRLS</div>
+          <div class="role-company">Hacks In Taiwan Conference (HITCON)</div>
+          <div class="role-dates">Sep 2022 – Present</div>
+          <ul class="bullets">
+            <li>Regular at cybersecurity study groups and workshops; led a session on how firewalls, IPS and WAF complement one another.</li>
+            <li>Supported the community's exhibition booth at tech conferences.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="experience-item">
+        <div class="company-logo">🎤</div>
+        <div>
+          <div class="role-title">Volunteer &amp; Participant, Cybersecurity &amp; Open-Source Community</div>
+          <div class="role-company">HITCON · MOPCON · COSCUP · iThome</div>
+          <div class="role-dates">Jul 2022 – May 2026</div>
+          <ul class="bullets">
+            <li>Volunteer Event Host at HITCON Cyber Range x CTF 2025 and MOPCON 2022, moderating sessions and speaker transitions.</li>
+            <li>Event Operations Volunteer at HITCON 2023, supporting on-site execution and cross-team coordination.</li>
+            <li>Attendee at CYBERSEC, HITCON 2022 and COSCUP 2022 to keep up with industry trends and practitioners.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="experience-item">
+        <div class="company-logo">CX</div>
+        <div>
+          <div class="role-title">Exhibitor, 2018 COMPUTEX Taipei</div>
+          <div class="role-company">SmarTEX smart-technology showcase · TAITRA &amp; Taipei Computer Association</div>
+          <div class="role-dates">Jun 2018</div>
+          <ul class="bullets">
+            <li>Exhibited the team's automated robotic arm project.</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="card">
       <h2>Skills</h2>
+      <h3>Frontend</h3>
       <div class="skills">
-        <span class="skill">Cybersecurity</span>
-        <span class="skill">SOC Operations</span>
-        <span class="skill">Blue Team</span>
+        <span class="skill">Vue</span>
+        <span class="skill">JavaScript</span>
+      </div>
+      <h3>Programming &amp; Systems</h3>
+      <div class="skills">
+        <span class="skill">C++</span>
+        <span class="skill">Linux</span>
+        <span class="skill">Shell Scripting</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Git</span>
+      </div>
+      <h3>Data &amp; BI</h3>
+      <div class="skills">
         <span class="skill">PostgreSQL</span>
         <span class="skill">MSSQL</span>
-        <span class="skill">Vue</span>
-        <span class="skill">BI Dashboards</span>
-        <span class="skill">Automation Scripting</span>
+        <span class="skill">MicroStrategy</span>
+      </div>
+      <h3>Security</h3>
+      <div class="skills">
+        <span class="skill">Blue Team</span>
+        <span class="skill">SOC / MDR</span>
+        <span class="skill">ArcSight SIEM</span>
+        <span class="skill">EDR Integration</span>
+        <span class="skill">Risk Indicators</span>
+      </div>
+      <h3>Languages</h3>
+      <div class="skills">
+        <span class="skill">Mandarin (Native)</span>
+        <span class="skill">English (Intermediate)</span>
       </div>
     </section>
 
     <section class="card">
-      <h2>Honors & Awards</h2>
+      <h2>Honors &amp; Awards</h2>
       <ul class="honors">
-        <li>Outstanding Employee — CHT Security</li>
-        <li>Programming Award — robotic arm project (student)</li>
+        <li><div>2nd Place &amp; Honorable Mention — AI Innovation Application Final<span class="award-meta">CHT Security · Nov 2025</span></div></li>
+        <li><div>Outstanding Employee Award<span class="award-meta">CHT Security · Jan 2024</span></div></li>
+        <li><div>1st Place &amp; Audience Choice — 2018 Capstone Project Competition<span class="award-meta">Department of Electrical Engineering, NUK · Dec 2018</span></div></li>
+        <li><div>1st Place — 2018 SKS Smart Security Robot Competition<span class="award-meta">Shin Kong Security &amp; TAIROA · Sep 2018</span></div></li>
+        <li><div>2nd Place — 2018 Robot Competition<span class="award-meta">Industrial Development Bureau, MOEA &amp; PMC · Sep 2018</span></div></li>
+        <li><div>Honorable Mention, Application Group — 2018 HIWIN Intelligent Robotic Arm Practical Competition<span class="award-meta">HIWIN Education Foundation &amp; TAIROA · Sep 2018</span></div></li>
+        <li><div>1st Place — AI and Robot Innovation Design and Application Competition<span class="award-meta">NUK AI Research Center · Aug 2018</span></div></li>
+        <li><div>Honorable Mention, D1-MBOT Blindfold Challenge — 2016 Taiwan Intelligent Robot Contest<span class="award-meta">Southern Taiwan University of Science and Technology · Apr 2016</span></div></li>
       </ul>
     </section>
   </div>
