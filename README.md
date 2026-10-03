@@ -16,6 +16,8 @@ Personal landing page hosted at https://r0963033043.github.io
 
 | Project | Path |
 | --- | --- |
+| Language Learning | [/multilingual/](https://r0963033043.github.io/multilingual/) |
+| Foodie | [/foodie/](https://r0963033043.github.io/foodie/) |
 | OOTD | [/ootd/](https://r0963033043.github.io/ootd/) |
 | Plan a Trip | [/trip-planner/](https://r0963033043.github.io/trip-planner/) |
 
